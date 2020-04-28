@@ -5,10 +5,10 @@ This is a production ready architecture, using  the following technologies:
 - **material-ui**: React components for faster and easier web development.
 - **animate.css**: CSS basic animation.
 - **eslint**: Code quality.
-- **node-sass**: Node.js bindings to libsass. 
+- **node-sass**: Node.js bindings to libsass.
 - **react**: Last version of React.
 - **react-router-dom**: DOM binding for react-router .
-- **react-scripts**: Create React apps with no build configuration. 
+- **react-scripts**: Create React apps with no build configuration.
 - **redux**: A predictable state container for JavaScript apps.
 - **redux-persist**: Persist and rehydrate a redux store.
 - **redux-saga**: A library that aims to make application side effects easier to manage.
@@ -22,6 +22,7 @@ This is a production ready architecture, using  the following technologies:
 ```
 npm run build
 npm run start
+npm run deploy
 ```
 ## **Test**
 Check code quality with eslint `npm run test:eslint`
