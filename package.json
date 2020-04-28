@@ -1,7 +1,7 @@
 {
   "name": "lrc-staking-dapp",
   "version": "1.0.0",
-  "homepage": "http://loopring.github.io/lrc-staking-dapp",
+  "homepage": "https://staking.loopring.org",
   "description": "Manage your stake of Loopring token(stakingpool.lrctoken.eth)",
   "scripts": {
     "start": "serve -s build",
