@@ -37,7 +37,7 @@ const WithdrawStepper = React.memo(({
         <Step>
           <StepLabel>{messages['Are you sure?']}</StepLabel>
           <StepContent>
-            <Typography>{messages['When you make a withdrawal, the pending rewards will automatically be added to your stake which will result in resetting the age of your stake to today (this does not impact the age to make a withdrawal).']}</Typography>
+            <Typography>{messages['When you make a withdrawal, the pending rewards will automatically be added to your stake.']}</Typography>
             <div className={classes.actionsContainer}>
               <div>
                 <Button

@@ -2,6 +2,7 @@
 // Key = english version and value = the french version
 
 export default {
+  'developpedBy': 'Promoteur: ',
   'Please wait while the application is loading': 'Veuillez patienter pendant le chargement de l\'application',
   'If you have any issues please contact': 'Si vous rencontrez un problème, veuillez contacter',
   'Loopring Staking & Claiming manager': 'Loopring Staking & Claiming manager',
@@ -45,7 +46,7 @@ export default {
   'Your Loopring token are now staked and you will start collecting fees on all trades !': 'Vos Loopring token sont maintenant stacked et vous allez commencer à collecter des frais sur chaque trades !',
   'Done': 'Terminé',
   'Are you sure?': 'Êtes-vous sûr?',
-  'All your pending reward will be transferred to your stake and your stake age will be reset to today (this does not affect the age to withdraw).': 'La totalitée de vos récompenses en attentes seront transférées vers votre stake et l\'âge de celui-ci sera réinitialisé à aujourd\'hui (cela n\'affectera pas l\'âge de retrait).',
+  'All your pending reward will be transferred to your stake.': 'La totalitée de vos récompenses en attentes seront transférées vers votre stake et l\'âge de celui-ci sera réinitialisé à aujourd\'hui (cela n\'affectera pas l\'âge de retrait).',
   '$LRC_AMOUNT will be transferred from your pending reward to your current stake.': '$LRC_AMOUNT seront transférés depuis vos récompenses en attentes vers votre stake actuel',
   'Your pending rewards are now staked.': 'Vos récompenses ont été ajoutées à votre stake.',
   'I understand': 'Je comprend',
@@ -56,7 +57,7 @@ export default {
   'Withdrawing': 'Retirer...',
   'Your withdrawal has been processed, we hope to see you soon :(': 'Votre retrait a été effectué, nous espérons vous revoir bientôt :(',
   'Failed to withdraw': 'Echec du retrait',
-  'Please wait $TIME before $TITLE !': 'Veuillez attendre $TIME avant de $TITLE !',
+  'Please wait $TIME before $TITLE !': 'Veuillez attendre $TIME day avant de $TITLE !',
   'Your tokens will be locked until your stake age is older than 90 day. If you add new tokens into your stake, your age will be weighted by the amount of tokens.': 'Vos tokens seront verrouillés jusqu\'à ce que votre stake a au moins 90 jours. Si vous ajoutez de nouveaux tokens à votre stake, votre âge sera pondéré par le nombre de tokens.',
-  'When you make a withdrawal, the pending rewards will automatically be added to your stake which will result in resetting the age of your stake to today (this does not impact the age to make a withdrawal).': 'Quand vous effectuez un retrait, les récompenses en attentes seront automatiquement ajoutées à votre stake ce qui aura pour conséquence de réinitialiser l\'âge de votre stake à aujourd\'hui(cela n\'impact pas l\'âge pour effectuer un retrait).'
+  'When you make a withdrawal, the pending rewards will automatically be added to your stake.': 'Quand vous effectuez un retrait, les récompenses en attentes seront automatiquement ajoutées à votre stake ce qui aura pour conséquence de réinitialiser l\'âge de votre stake à aujourd\'hui(cela n\'impact pas l\'âge pour effectuer un retrait).'
 };

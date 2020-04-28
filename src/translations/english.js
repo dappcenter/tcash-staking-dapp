@@ -3,6 +3,7 @@
 // and value = the english version (key=value)
 
 export default {
+  'developpedBy': 'Developed by ',
   'Please wait while the application is loading': 'Please wait while the application is loading',
   'If you have any issues please contact': 'If you have any issues please contact',
   'Loopring Staking & Claiming manager': 'Loopring Staking & Claiming manager',
@@ -46,7 +47,7 @@ export default {
   'Your Loopring token are now staked and you will start collecting fees on all trades !': 'Your Loopring token are now staked and you will start collecting fees on all trades !',
   'Done': 'Done',
   'Are you sure?': 'Are you sure?',
-  'All your pending reward will be transferred to your stake and your stake age will be reset to today (this does not affect the age to withdraw).': 'All your pending reward will be transferred to your stake and your stake age will be reset to today (this does not affect the age to withdraw).',
+  'All your pending reward will be transferred to your stake.': 'All your pending reward will be transferred to your stake.',
   '$LRC_AMOUNT will be transferred from your pending reward to your current stake.': '$LRC_AMOUNT will be transferred from your pending reward to your current stake.',
   'Your pending rewards are now staked.': 'Your pending rewards are now staked.',
   'I understand': 'I understand',
@@ -57,7 +58,7 @@ export default {
   'Withdrawing': 'Withdrawing',
   'Your withdrawal has been processed, we hope to see you soon :(': 'Your withdrawal has been processed, we hope to see you soon :(',
   'Failed to withdraw': 'Failed to withdraw',
-  'Please wait $TIME before $TITLE !': 'Please wait $TIME before $TITLE !',
+  'Please wait $TIME before $TITLE !': 'Please wait $TIME days before $TITLE !',
   'Your tokens will be locked until your stake age is older than 90 day. If you add new tokens into your stake, your age will be weighted by the amount of tokens.': 'Your tokens will be locked until your stake age is older than 90 day. If you add new tokens into your stake, your age will be weighted by the amount of tokens.',
-  'When you make a withdrawal, the pending rewards will automatically be added to your stake which will result in resetting the age of your stake to today (this does not impact the age to make a withdrawal).': 'When you make a withdrawal, the pending rewards will automatically be added to your stake which will result in resetting the age of your stake to today (this does not impact the age to make a withdrawal).'
+  'When you make a withdrawal, the pending rewards will automatically be added to your stake.': 'When you make a withdrawal, the pending rewards will automatically be added to your stake.'
 };

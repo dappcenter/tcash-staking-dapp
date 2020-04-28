@@ -35,7 +35,7 @@ const ClaimStepper = React.memo(({
         <Step>
           <StepLabel>{messages['Are you sure?']}</StepLabel>
           <StepContent>
-            <Typography>{messages['All your pending reward will be transferred to your stake and your stake age will be reset to today (this does not affect the age to withdraw).']}</Typography>
+            <Typography>{messages['All your pending reward will be transferred to your stake.']}</Typography>
             <div className={classes.actionsContainer}>
               <div>
                 <Button

@@ -15,7 +15,7 @@ import Action from './ActionContainer';
  * Display profile containing all basic information about stake user
  * and action available with the staking pool
  * Check if wallet is active and if all contract are loaded
- *
+ * NolanVanmoortel
  */
 
 const ContractManager = () => {
@@ -34,9 +34,10 @@ const ContractManager = () => {
     || !tokenContract) return (<SuspenseLoading messages={messages} />);
 
   return (
+    <div>
     <Card className="card-box mb-4">
       <span className="ribbon-angle ribbon-angle--top-left ribbon-primary">
-        <small><a href="https://twitter.com/NolanVanmoortel" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>twitter</a></small>
+        <small><a href="https://loopring.org" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Loopring</a></small>
       </span>
       <Grid container spacing={4}>
         <Grid item xs={12} lg={5}>
@@ -53,6 +54,10 @@ const ContractManager = () => {
         </Grid>
       </Grid>
     </Card>
+<div
+className="text-center"
+> {messages['developpedBy']}<a href="https://twitter.com/NolanVanmoortel">NolanVanmoortel</a> </div>
+    </div>
   );
 };
 

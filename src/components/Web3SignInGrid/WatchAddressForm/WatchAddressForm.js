@@ -21,7 +21,7 @@ const WatchAddressForm = React.memo(({
         label={messages['Wallet address or ENS']}
         fullWidth
         type="text"
-        placeholder="0xb451908d8659a691cf0caba630091994258f81c4"
+        placeholder="0xc078901477b01c708874e0a7e335366a01bf14ce"
         onKeyDown={(e) => { if (e.key === 'Enter' && !!walletAddress) onConfirm(walletAddress); }}
         onChange={(e) => setWalletAddress(e.target.value)}
         className={classes.inputWallet}

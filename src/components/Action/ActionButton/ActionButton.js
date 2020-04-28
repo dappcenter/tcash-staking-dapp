@@ -49,7 +49,7 @@ const ActionButton = React.memo(({
       <Tooltip
         arrow
         title={messages['Please wait $TIME before $TITLE !']
-          .replace('$TIME', `${numeral(waitingTime / 60 / 60 / 24).format('(0.00a)')} day`)
+          .replace('$TIME', `${numeral(waitingTime / 60 / 60 / 24).format('(0.00a)')}`)
           .replace('$TITLE', title)}
       >
         <div>
