@@ -22,14 +22,14 @@ export const tryToOpenWalletIfNotActive = (active, walletID, onActivate, onSetWa
           .catch(() => onSetWalletID(0));
         break;
       case 3:
-        onActivate(new LedgerConnector({ supportedChainIds: [1], url: 'https://mainnet.infura.io/v3/740f8a307aa34141a298506577f063bc' }))
+        onActivate(new LedgerConnector({ chainId: 1, url: 'https://mainnet.infura.io/v3/740f8a307aa34141a298506577f063bc' }))
           .catch(() => onSetWalletID(0));
         break;
       case 4:
         onActivate(new TrezorConnector({
+          chainId: 1,
           manifestAppUrl: 'https://stake.o2b.dev',
           manifestEmail: 'nolan@o2b.dev',
-          supportedChainIds: [1],
           url: 'https://mainnet.infura.io/v3/740f8a307aa34141a298506577f063bc',
         }))
           .catch(() => onSetWalletID(0));
@@ -66,11 +66,8 @@ export const tryToOpenWalletIfNotActive = (active, walletID, onActivate, onSetWa
 };
 
 // Set and save wallet address, if read-only resolve ENS
-export const saveAddressWalletOrENS = (library, walletAddress, addressWatchOnly,
+export const saveAddressWalletOrENS = (library, walletAddress,
   account, onSetWalletAddress) => {
-  if (!!library && !walletAddress.isLoading) {
-    if (!!addressWatchOnly
-      && walletAddress.value !== addressWatchOnly) onSetWalletAddress(addressWatchOnly);
-    if (!!account && walletAddress.value !== account) onSetWalletAddress(account);
-  }
+  if (!!library && !walletAddress.isLoading
+    && !!account && walletAddress.value !== account) onSetWalletAddress(account);
 };

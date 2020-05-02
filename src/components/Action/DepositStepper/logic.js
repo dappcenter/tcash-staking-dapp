@@ -1,6 +1,10 @@
+import BigNumber from 'bignumber.js';
+import BigAmountHelper from '../../../utils/BigAmountHelper';
+
 // Skip the step of approving if already approved
 export const checkEnoughAllowanceRedirectToStakeStep = (amount, allowance, step, onSetStep) => {
-  if (!!amount && allowance.value / (10 ** 18) >= amount && step === 2) onSetStep(3);
+  if (!!amount && new BigNumber(allowance.value).isGreaterThanOrEqualTo(BigAmountHelper(amount))
+    && step === 2) onSetStep(3);
 };
 
 // Wait stake is done and go to next step if no error

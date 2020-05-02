@@ -10,6 +10,7 @@ import Confetti from 'react-confetti';
 
 import extProps from './propTypes';
 import { checkAsyncStakeIsDone, checkEnoughAllowanceRedirectToStakeStep, timeoutConfetti } from './logic';
+import BigAmountHelper from '../../../utils/BigAmountHelper';
 
 /*
  *
@@ -75,10 +76,11 @@ const DepositStepper = React.memo(({
               variant="outlined"
               label="Amount"
               fullWidth
-              type="text"
+              type="number"
               placeholder={maxAmount}
               className={classes.inputLRC}
-              onChange={(e) => setAmount(e.target.value <= maxAmount ? e.target.value : maxAmount)}
+              onChange={(e) => setAmount(e.target.value <= maxAmount
+                ? e.target.value * 1 : maxAmount * 1)}
             />
             <Slider
               value={!maxAmount ? 0 : Math.round((amount / maxAmount) * 100)}
@@ -101,7 +103,7 @@ const DepositStepper = React.memo(({
                   {messages.Back}
                 </Button>
                 <Button
-                  disabled={!amount}
+                  disabled={!(amount * 1)}
                   variant="contained"
                   color="primary"
                   onClick={() => setStep(2)}
@@ -138,7 +140,7 @@ const DepositStepper = React.memo(({
                     disabled={approve.isLoading}
                     variant="contained"
                     color="primary"
-                    onClick={() => onApprove(new BigNumber(amount * (10 ** 18)).toFixed(0))}
+                    onClick={() => onApprove(BigAmountHelper(amount).toFixed(0))}
                     className={classes.button}
                   >
                     { approve.isLoading && messages.Approving }
@@ -162,7 +164,8 @@ const DepositStepper = React.memo(({
                   // if not redirect to step enter amount
                 }
                 <Button
-                  onClick={() => setStep(allowance.value / (10 ** 18) >= amount ? 1 : 2)}
+                  onClick={() => setStep(new BigNumber(allowance.value)
+                    .isGreaterThanOrEqualTo(BigAmountHelper(amount) ? 1 : 2))}
                   className={classes.button}
                 >
                   {messages.Back}
@@ -172,7 +175,7 @@ const DepositStepper = React.memo(({
                     disabled={stake.isLoading}
                     variant="contained"
                     color="primary"
-                    onClick={() => onStake(new BigNumber(amount * (10 ** 18)).toFixed(0))}
+                    onClick={() => onStake(BigAmountHelper(amount).toFixed(0))}
                     className={classes.button}
                   >
                     { stake.isLoading && messages.Staking }

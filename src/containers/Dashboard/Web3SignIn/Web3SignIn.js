@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useWeb3React } from '@web3-react/core';
 import { Redirect } from 'react-router-dom';
@@ -33,7 +33,6 @@ const Web3SignIn = () => {
   const secureSwitchWallet = useCallback((_walletID) => dispatch(
     settingsLogout(deactivate, _walletID),
   ), [dispatch, deactivate]);
-  const [addressWatchOnly, setAddressWatchOnly] = useState('');
 
   useEffect(() => {
     tryToOpenWalletIfNotActive(active, walletID, activate, setWalletID);
@@ -44,8 +43,8 @@ const Web3SignIn = () => {
   }, [error, setWalletID]);
 
   useEffect(() => {
-    saveAddressWalletOrENS(library, walletAddress, addressWatchOnly, account, setWalletAddress);
-  }, [library, walletAddress, addressWatchOnly, account, setWalletAddress]);
+    saveAddressWalletOrENS(library, walletAddress, account, setWalletAddress);
+  }, [library, walletAddress, account, setWalletAddress]);
 
   const messages = languageProvider[language];
 
@@ -56,7 +55,7 @@ const Web3SignIn = () => {
       messages={messages}
       onSelectWallet={secureSwitchWallet}
       walletLoading={walletID}
-      onUpdateWalletAddress={setAddressWatchOnly}
+      onUpdateWalletAddress={setWalletAddress}
       isLoading={walletAddress.isLoading}
     />
   );
