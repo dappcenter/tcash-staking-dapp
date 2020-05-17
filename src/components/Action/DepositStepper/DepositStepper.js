@@ -4,13 +4,14 @@ import {
   StepContent, Typography, Slider, CircularProgress,
 } from '@material-ui/core';
 import numeral from 'numeral';
-import BigNumber from 'bignumber.js';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
 
 import extProps from './propTypes';
-import { checkAsyncStakeIsDone, checkEnoughAllowanceRedirectToStakeStep, timeoutConfetti } from './logic';
-import BigAmountHelper from '../../../utils/BigAmountHelper';
+import {
+  checkAsyncStakeIsDone, checkEnoughAllowanceRedirectToStakeStep, timeoutConfetti, STEP,
+} from './logic';
+import { safeAmount, safeAmountFixed, safeAmountToPrint } from '../../../utils/BigAmountHelper';
 
 /*
  *
@@ -23,7 +24,7 @@ const DepositStepper = React.memo(({
   classes, messages, maxAmount, onApprove, onStake, allowance, stake, approve, onDone,
 }) => {
   const [step, setStep] = useState(0);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState('0');
   const [isStaking, setIsStaking] = useState(false);
   const [isDone, setIsDone] = useState(false);
   const { width, height } = useWindowSize();
@@ -58,7 +59,7 @@ const DepositStepper = React.memo(({
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={() => setStep(1)}
+                  onClick={() => setStep(STEP.AMOUNT)}
                   className={classes.button}
                 >
                   {messages['I understand']}
@@ -77,13 +78,15 @@ const DepositStepper = React.memo(({
               label="Amount"
               fullWidth
               type="number"
-              placeholder={maxAmount}
+              placeholder={safeAmountToPrint(maxAmount)}
               className={classes.inputLRC}
-              onChange={(e) => setAmount(e.target.value <= maxAmount
-                ? e.target.value * 1 : maxAmount * 1)}
+              onChange={(e) => setAmount(safeAmount(e.target.value || 0)
+                .isLessThanOrEqualTo(maxAmount)
+                ? e.target.value : safeAmountToPrint(maxAmount))}
             />
             <Slider
-              value={!maxAmount ? 0 : Math.round((amount / maxAmount) * 100)}
+              value={safeAmount(maxAmount).isZero()
+                ? 0 : safeAmount(amount).div(maxAmount).multipliedBy(100).toFixed(0) * 1}
               defaultValue={0}
               valueLabelFormat={(value) => `${value}%`}
               getAriaValueText={() => '%'}
@@ -92,21 +95,22 @@ const DepositStepper = React.memo(({
               valueLabelDisplay="auto"
               marks={[{ label: '0%', value: 0 }, { label: '25%', value: 25 }, { label: '50%', value: 50 }, { label: '75%', value: 75 }, { label: '100%', value: 100 }]}
               className={classes.sliderAmount}
-              onChange={(_, value) => setAmount(maxAmount * (value / 100))}
+              onChange={(_, value) => setAmount(safeAmountToPrint(safeAmount(maxAmount)
+                .multipliedBy(value / 100)))}
             />
             <div className={classes.actionsContainer}>
               <div>
                 <Button
-                  onClick={() => setStep(0)}
+                  onClick={() => setStep(STEP.DISCLAIMER)}
                   className={classes.button}
                 >
                   {messages.Back}
                 </Button>
                 <Button
-                  disabled={!(amount * 1)}
+                  disabled={safeAmount(amount).isLessThanOrEqualTo(0)}
                   variant="contained"
                   color="primary"
-                  onClick={() => setStep(2)}
+                  onClick={() => setStep(STEP.APPROVAL)}
                   className={classes.button}
                 >
                   {messages.Next}
@@ -130,7 +134,7 @@ const DepositStepper = React.memo(({
             <div className={classes.actionsContainer}>
               <div className={classes.divBackAndConfirm}>
                 <Button
-                  onClick={() => setStep(1)}
+                  onClick={() => setStep(STEP.AMOUNT)}
                   className={classes.button}
                 >
                   {messages.Back}
@@ -140,7 +144,7 @@ const DepositStepper = React.memo(({
                     disabled={approve.isLoading}
                     variant="contained"
                     color="primary"
-                    onClick={() => onApprove(BigAmountHelper(amount).toFixed(0))}
+                    onClick={() => onApprove(safeAmountFixed(amount))}
                     className={classes.button}
                   >
                     { approve.isLoading && messages.Approving }
@@ -159,13 +163,8 @@ const DepositStepper = React.memo(({
             <Typography>{messages['You can now deposit your LRC to the staking pool.']}</Typography>
             <div className={classes.actionsContainer}>
               <div className={classes.divBackAndConfirm}>
-                {
-                  // Redirect to step approve if not enough approved
-                  // if not redirect to step enter amount
-                }
                 <Button
-                  onClick={() => setStep(new BigNumber(allowance.value)
-                    .isGreaterThanOrEqualTo(BigAmountHelper(amount) ? 1 : 2))}
+                  onClick={() => setStep(STEP.AMOUNT)}
                   className={classes.button}
                 >
                   {messages.Back}
@@ -175,7 +174,7 @@ const DepositStepper = React.memo(({
                     disabled={stake.isLoading}
                     variant="contained"
                     color="primary"
-                    onClick={() => onStake(BigAmountHelper(amount).toFixed(0))}
+                    onClick={() => onStake(safeAmountFixed(amount))}
                     className={classes.button}
                   >
                     { stake.isLoading && messages.Staking }
