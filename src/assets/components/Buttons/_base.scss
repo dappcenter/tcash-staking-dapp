@@ -21,9 +21,11 @@
 
 .btn-wrapper--label {
   display: inline-block;
+  color: black;
 
   & + .btn-wrapper--icon {
     margin-left: ($spacer / 2);
+    color: black;
   }
 }
 
