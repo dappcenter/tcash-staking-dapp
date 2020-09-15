@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import themeLRC from '../../../theme';
+import themeTCASH from '../../../theme';
 import extProps from './propTypes';
 
 /*
  *
- * Material-Design theme wrapper loaded with LRC theme
+ * Material-Design theme wrapper loaded with TCASH theme
  *
  */
 const ThemeWrapper = ({ children }) => {
-  const [theme] = useState(themeLRC);
+  const [theme] = useState(themeTCASH);
 
   return (
     <ThemeProvider theme={theme}>

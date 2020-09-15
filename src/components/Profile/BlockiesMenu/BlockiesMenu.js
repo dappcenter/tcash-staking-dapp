@@ -8,7 +8,7 @@ import { PropTypes } from 'prop-types';
 
 import ShortAddressCopyButton from '../../ShortAddressCopyButton';
 import extProps from './propTypes';
-import lrc from '../../../assets/images/tcash/tcash-small-black.png';
+import tcash from '../../../assets/images/tcash/tcash-small-black.png';
 
 /*
  *
@@ -92,19 +92,19 @@ const BlockiesMenu = React.memo(({
               </span>
             </ListItem>
             <Divider className="w-100" />
-            <ListItem button onClick={() => window.open('https://etherscan.io/address/lrctoken.eth', '_blank')}>
+            <ListItem button onClick={() => window.open('https://etherscan.io/address/0x9D3A8A7dF2a81B38A7f3d2f682B0aBA1e65DE7F8', '_blank')}>
               <span className="font-size-sm font-weight-bold">
-                <span className={classes.iconLeft}><img src={lrc} alt="Tcash logo" width={14} /></span>
-                {messages['LRC token']}
+                <span className={classes.iconLeft}><img src={tcash} alt="Tcash logo" width={14} /></span>
+                {messages['TCASH token']}
               </span>
             </ListItem>
-            <ListItem button onClick={() => window.open('https://etherscan.io/address/stakingpool.lrctoken.eth', '_blank')}>
+            <ListItem button onClick={() => window.open('https://etherscan.io/address/staking.tcashorg.eth', '_blank')}>
               <span className="font-size-sm font-weight-bold">
                 <span className={classes.iconLeft}><FontAwesomeIcon icon={['fab', 'fort-awesome']} /></span>
                 {messages['Staking pool']}
               </span>
             </ListItem>
-            <ListItem button onClick={() => window.open('https://etherscan.io/address/feevault.lrctoken.eth', '_blank')}>
+            <ListItem button onClick={() => window.open('https://etherscan.io/address/feevault.tcashorg.eth', '_blank')}>
               <span className="font-size-sm font-weight-bold">
                 <span className={classes.iconLeft}><FontAwesomeIcon icon={['fas', 'donate']} /></span>
                 {messages['Fee vault']}

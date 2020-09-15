@@ -57,7 +57,7 @@ const ActionContainer = () => {
       && !allowance.isLoading && !allowance.isLoaded) getAllowance();
   }, [tokenContract, walletAddress, allowance, getAllowance]);
 
-  // Fetch the amount of LRC in wallet only one time
+  // Fetch the amount of TCASH in wallet only one time
   useEffect(() => {
     if (!!tokenContract && walletAddress.value
       && !balance.isLoading && !balance.isLoaded) getBalance();

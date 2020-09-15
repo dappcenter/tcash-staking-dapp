@@ -53,7 +53,7 @@ const Web3SignInGrid = React.memo(({
                   {messages['Tcash Staking & Claiming manager']}
                 </h1>
                 <p className="font-size-md mb-0 text-white-50">
-                  {messages['Please connect a wallet with your LRC holdings to start or use the Read only button to check the state of your stake.']}
+                  {messages['Please connect a wallet with your TCASH holdings to start or use the Read only button to check the state of your stake.']}
                 </p>
                 <div className="divider border-2 my-5 border-light opacity-2 rounded w-25" />
                 <div>

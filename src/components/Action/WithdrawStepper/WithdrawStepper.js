@@ -61,7 +61,7 @@ const WithdrawStepper = React.memo(({
         <Step>
           <StepLabel>{messages['Select amount']}</StepLabel>
           <StepContent>
-            <Typography>{messages['Please fill in the amount of LRC you want to withdraw.']}</Typography>
+            <Typography>{messages['Please fill in the amount of TCASH you want to withdraw.']}</Typography>
             <TextField
               value={amount}
               variant="outlined"
@@ -69,7 +69,7 @@ const WithdrawStepper = React.memo(({
               fullWidth
               type="number"
               placeholder={safeAmountToPrint(maxAmount)}
-              className={classes.inputLRC}
+              className={classes.inputTCASH}
               onChange={(e) => setAmount(safeAmount(e.target.value || 0)
                 .isLessThanOrEqualTo(maxAmount)
                 ? e.target.value : safeAmountToPrint(maxAmount))}
@@ -116,9 +116,9 @@ const WithdrawStepper = React.memo(({
               <span className={`font-weight-bold ${classes.spanAmount}`}>
                 {numeral(amount).format('(0.00a)')}
                 {' '}
-                LRC
+                TCASH
               </span>
-              {messages['$LRC_AMOUNT will be transferred from your stake to your wallet.'].split('$LRC_AMOUNT')[1]}
+              {messages['$TCASH_AMOUNT will be transferred from your stake to your wallet.'].split('$TCASH_AMOUNT')[1]}
             </Typography>
             <div className={classes.actionsContainer}>
               <div className={classes.divBackAndConfirm}>

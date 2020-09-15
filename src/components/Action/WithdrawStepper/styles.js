@@ -17,7 +17,7 @@ export default (theme) => ({
   divBackAndConfirm: {
     display: 'flex',
   },
-  inputLRC: {
+  inputTCASH: {
     marginBottom: 8,
     marginTop: 16,
     width: '60%',

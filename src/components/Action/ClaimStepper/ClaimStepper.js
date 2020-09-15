@@ -64,9 +64,9 @@ const ClaimStepper = React.memo(({
               <span className={`font-weight-bold ${classes.spanAmount}`}>
                 {numeral(pendingReward).format('(0.00a)')}
                 {' '}
-                LRC
+                TCASH
               </span>
-              {messages['$LRC_AMOUNT will be transferred from your pending reward to your current stake.'].split('$LRC_AMOUNT')[1]}
+              {messages['$TCASH_AMOUNT will be transferred from your pending reward to your current stake.'].split('$TCASH_AMOUNT')[1]}
             </Typography>
             <div className={classes.actionsContainer}>
               <div className={classes.divBackAndConfirm}>

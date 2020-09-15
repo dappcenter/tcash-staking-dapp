@@ -27,7 +27,7 @@ export default (theme) => ({
     top: 0,
     width: '100%',
   },
-  inputLRC: {
+  inputTCASH: {
     marginBottom: 8,
     marginTop: 16,
     width: '60%',

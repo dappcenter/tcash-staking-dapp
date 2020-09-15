@@ -4,7 +4,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import extProps from './propTypes';
-import lrc from '../../../assets/images/tcash/tcash-small-blue.png';
+import tcash from '../../../assets/images/tcash/tcash-small-blue.png';
 
 /*
  *
@@ -29,7 +29,7 @@ const AmountSpan = React.memo(({
             : (
               <>
                 { (isShowTcash && !tcashPrice) && (
-                  <img alt="Tcash logo" className={classes.tcashLogo} src={lrc} height="16px" />
+                  <img alt="Tcash logo" className={classes.tcashLogo} src={tcash} height="16px" />
                 ) }
                 { (isShowTcash && !!tcashPrice) && (
                   <FontAwesomeIcon className={classes.iconDollar} icon={['fas', 'dollar-sign']} />

@@ -71,7 +71,7 @@ const DepositStepper = React.memo(({
         <Step>
           <StepLabel>{messages['Select amount']}</StepLabel>
           <StepContent>
-            <Typography>{messages['Please fill in the amount of LRC you want to stake.']}</Typography>
+            <Typography>{messages['Please fill in the amount of TCASH you want to stake.']}</Typography>
             <TextField
               value={amount}
               variant="outlined"
@@ -79,7 +79,7 @@ const DepositStepper = React.memo(({
               fullWidth
               type="number"
               placeholder={safeAmountToPrint(maxAmount)}
-              className={classes.inputLRC}
+              className={classes.inputTCASH}
               onChange={(e) => setAmount(safeAmount(e.target.value || 0)
                 .isLessThanOrEqualTo(maxAmount)
                 ? e.target.value : safeAmountToPrint(maxAmount))}
@@ -123,13 +123,13 @@ const DepositStepper = React.memo(({
           <StepLabel>{messages.Approve}</StepLabel>
           <StepContent>
             <Typography>
-              {messages['You need to allow the staking pool to take $LRC_AMOUNT from your wallet.'].split('$LRC_AMOUNT')[0]}
+              {messages['You need to allow the staking pool to take $TCASH_AMOUNT from your wallet.'].split('$TCASH_AMOUNT')[0]}
               <span className={`font-weight-bold ${classes.spanAmount}`}>
                 {numeral(amount).format('(0.00a)')}
                 {' '}
-                LRC
+                TCASH
               </span>
-              {messages['You need to allow the staking pool to take $LRC_AMOUNT from your wallet.'].split('$LRC_AMOUNT')[1]}
+              {messages['You need to allow the staking pool to take $TCASH_AMOUNT from your wallet.'].split('$TCASH_AMOUNT')[1]}
             </Typography>
             <div className={classes.actionsContainer}>
               <div className={classes.divBackAndConfirm}>
@@ -160,7 +160,7 @@ const DepositStepper = React.memo(({
         <Step>
           <StepLabel>{messages.Stake}</StepLabel>
           <StepContent>
-            <Typography>{messages['You can now deposit your LRC to the staking pool.']}</Typography>
+            <Typography>{messages['You can now deposit your TCASH to the staking pool.']}</Typography>
             <div className={classes.actionsContainer}>
               <div className={classes.divBackAndConfirm}>
                 <Button

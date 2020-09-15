@@ -9,7 +9,7 @@ export const STAKING = {
   }, {
     constant: true, inputs: [], name: 'numAddresses', outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }], payable: false, stateMutability: 'view', type: 'function',
   }, {
-    constant: true, inputs: [], name: 'lrcAddress', outputs: [{ internalType: 'address', name: '', type: 'address' }], payable: false, stateMutability: 'view', type: 'function',
+    constant: true, inputs: [], name: 'tcashAddress', outputs: [{ internalType: 'address', name: '', type: 'address' }], payable: false, stateMutability: 'view', type: 'function',
   }, {
     constant: false, inputs: [], name: 'claim', outputs: [{ internalType: 'uint256', name: 'claimedAmount', type: 'uint256' }], payable: false, stateMutability: 'nonpayable', type: 'function',
   }, {
@@ -37,7 +37,7 @@ export const STAKING = {
   }, {
     constant: false, inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }], name: 'transferOwnership', outputs: [], payable: false, stateMutability: 'nonpayable', type: 'function',
   }, {
-    inputs: [{ internalType: 'address', name: '_lrcAddress', type: 'address' }], payable: false, stateMutability: 'nonpayable', type: 'constructor',
+    inputs: [{ internalType: 'address', name: '_tcashAddress', type: 'address' }], payable: false, stateMutability: 'nonpayable', type: 'constructor',
   }, {
     anonymous: false,
     inputs: [{
@@ -52,7 +52,7 @@ export const STAKING = {
     }, {
       indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256',
     }],
-    name: 'LRCStaked',
+    name: 'TCASHStaked',
     type: 'event',
   }, {
     anonymous: false,
@@ -61,7 +61,7 @@ export const STAKING = {
     }, {
       indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256',
     }],
-    name: 'LRCWithdrawn',
+    name: 'TCASHWithdrawn',
     type: 'event',
   }, {
     anonymous: false,
@@ -70,7 +70,7 @@ export const STAKING = {
     }, {
       indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256',
     }],
-    name: 'LRCRewarded',
+    name: 'TCASHRewarded',
     type: 'event',
   }, {
     anonymous: false,
@@ -87,7 +87,7 @@ export const STAKING = {
 export const FEE = {
   address: '0x4b89f8996892d137c3dE1312d1dD4E4F4fFcA171',
   jsonInterface: [{
-    inputs: [{ internalType: 'address', name: '_lrcAddress', type: 'address' }], payable: false, stateMutability: 'nonpayable', type: 'constructor',
+    inputs: [{ internalType: 'address', name: '_tcashAddress', type: 'address' }], payable: false, stateMutability: 'nonpayable', type: 'constructor',
   }, {
     anonymous: false,
     inputs: [{
@@ -102,7 +102,7 @@ export const FEE = {
     inputs: [{
       indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256',
     }],
-    name: 'LRCClaimed',
+    name: 'TCASHClaimed',
     type: 'event',
   }, {
     anonymous: false,
@@ -144,7 +144,7 @@ export const FEE = {
   }, {
     constant: true, inputs: [], name: 'getProtocolFeeStats', outputs: [{ internalType: 'uint256', name: 'accumulatedFees', type: 'uint256' }, { internalType: 'uint256', name: 'accumulatedBurn', type: 'uint256' }, { internalType: 'uint256', name: 'accumulatedDAOFund', type: 'uint256' }, { internalType: 'uint256', name: 'accumulatedReward', type: 'uint256' }, { internalType: 'uint256', name: 'remainingFees', type: 'uint256' }, { internalType: 'uint256', name: 'remainingBurn', type: 'uint256' }, { internalType: 'uint256', name: 'remainingDAOFund', type: 'uint256' }, { internalType: 'uint256', name: 'remainingReward', type: 'uint256' }], payable: false, stateMutability: 'view', type: 'function',
   }, {
-    constant: true, inputs: [], name: 'lrcAddress', outputs: [{ internalType: 'address', name: '', type: 'address' }], payable: false, stateMutability: 'view', type: 'function',
+    constant: true, inputs: [], name: 'tcashAddress', outputs: [{ internalType: 'address', name: '', type: 'address' }], payable: false, stateMutability: 'view', type: 'function',
   }, {
     constant: true, inputs: [], name: 'owner', outputs: [{ internalType: 'address', name: '', type: 'address' }], payable: false, stateMutability: 'view', type: 'function',
   }, {
@@ -152,7 +152,7 @@ export const FEE = {
   }, {
     constant: false, inputs: [], name: 'renounceOwnership', outputs: [], payable: false, stateMutability: 'nonpayable', type: 'function',
   }, {
-    constant: false, inputs: [{ internalType: 'address', name: 'token', type: 'address' }, { internalType: 'uint256', name: 'amount', type: 'uint256' }], name: 'sellTokenForLRC', outputs: [], payable: false, stateMutability: 'nonpayable', type: 'function',
+    constant: false, inputs: [{ internalType: 'address', name: 'token', type: 'address' }, { internalType: 'uint256', name: 'amount', type: 'uint256' }], name: 'sellTokenForTCASH', outputs: [], payable: false, stateMutability: 'nonpayable', type: 'function',
   }, {
     constant: true, inputs: [], name: 'tokenSellerAddress', outputs: [{ internalType: 'address', name: '', type: 'address' }], payable: false, stateMutability: 'view', type: 'function',
   }, {
