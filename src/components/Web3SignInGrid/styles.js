@@ -29,7 +29,7 @@ export default (theme) => ({
   colorTitleWatch: {
     color: theme.palette.secondary.main,
   },
-  loopringImg: {
+  tcashImg: {
     height: '1.7rem',
   },
   pb40: {

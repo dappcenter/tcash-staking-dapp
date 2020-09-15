@@ -6,7 +6,7 @@ export default {
   'developpedBy': '开发者：',
   'Please wait while the application is loading': '应用正在加载，请稍等',
   'If you have any issues please contact': '如果您有任何问题请联系',
-  'Loopring Staking & Claiming manager': '路印质押和领取奖励管理员',
+  'Tcash Staking & Claiming manager': '路印质押和领取奖励管理员',
   'Please connect a wallet with your LRC holdings to start or use the Read only button to check the state of your stake.':
    '请连接一个持有LRC的钱包，或使用“查看地址”按钮查看您的质押状态',
   'Watch address': '查看地址',
@@ -45,7 +45,7 @@ export default {
   'Staking': '正在质押',
   'Failed to approve': '批准失败',
   'Failed to stake': '质押失败',
-  'Your Loopring token are now staked and you will start collecting fees on all trades !': '您的LRC代币现在已质押，您将开始慢慢获取收益！',
+  'Your Tcash token are now staked and you will start collecting fees on all trades !': '您的LRC代币现在已质押，您将开始慢慢获取收益！',
   'Done': '已完成',
   'Are you sure?': '确定吗？',
   'All your pending reward will be transferred to your stake.': '您所有待处理的奖励将转移到您的质押中。',

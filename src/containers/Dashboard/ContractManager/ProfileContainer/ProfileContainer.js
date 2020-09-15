@@ -105,7 +105,7 @@ const ProfileContainer = () => {
       isLoading={!feeStats.isLoaded || !totalStake.isLoaded || !yourStake.isLoaded}
       isChartLoading={!stakeList.isLoaded}
       isShowDollar={isShowDollar.value}
-      loopringPrice={isShowDollar.price}
+      tcashPrice={isShowDollar.price}
       onSetIsShowDollar={setIsShowPrice}
     />
   );

@@ -4,7 +4,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import extProps from './propTypes';
-import lrc from '../../../assets/images/loopring/loopring-small-blue.png';
+import lrc from '../../../assets/images/tcash/tcash-small-blue.png';
 
 /*
  *
@@ -13,11 +13,11 @@ import lrc from '../../../assets/images/loopring/loopring-small-blue.png';
  */
 
 const AmountSpan = React.memo(({
-  classes, title, number, format = '(0.00a)', loopringPrice,
-  isShowLoopring, isXl, isPercent, isDay, isLoading,
+  classes, title, number, format = '(0.00a)', tcashPrice,
+  isShowTcash, isXl, isPercent, isDay, isLoading,
 }) => {
   // eslint-disable-next-line no-extra-boolean-cast
-  const price = !!loopringPrice ? number * loopringPrice : number;
+  const price = !!tcashPrice ? number * tcashPrice : number;
   const toPrint = numeral(price).format(format);
 
   return (
@@ -28,10 +28,10 @@ const AmountSpan = React.memo(({
           isLoading ? (<Skeleton variant="text" width={100} height={35} />)
             : (
               <>
-                { (isShowLoopring && !loopringPrice) && (
-                  <img alt="Loopring logo" className={classes.loopringLogo} src={lrc} height="16px" />
+                { (isShowTcash && !tcashPrice) && (
+                  <img alt="Tcash logo" className={classes.tcashLogo} src={lrc} height="16px" />
                 ) }
-                { (isShowLoopring && !!loopringPrice) && (
+                { (isShowTcash && !!tcashPrice) && (
                   <FontAwesomeIcon className={classes.iconDollar} icon={['fas', 'dollar-sign']} />
                 ) }
                 <span className={`font-weight-bold 

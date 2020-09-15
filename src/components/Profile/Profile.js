@@ -77,7 +77,7 @@ const defaultData = [
 const Profile = React.memo(({
   classes, messages, walletAddress, stake, pendingReward, tokenAge,
   isShowDollar, onSetIsShowDollar, stakeTotal, feesTotal, share, tokenAgeList,
-  onEditAddress, onLogout, isLoading, isChartLoading, loopringPrice,
+  onEditAddress, onLogout, isLoading, isChartLoading, tcashPrice,
 }) => {
   const [chartData, setChartData] = useState(defaultData);
   const [chartOption, setChartOption] = useState(defaultOption);
@@ -107,28 +107,28 @@ const Profile = React.memo(({
       <SwitchShowDollar onSwitch={onSetIsShowDollar} isShowDollar={isShowDollar} />
       <ShortAddressCopyButton messages={messages} walletAddress={walletAddress} />
       <div className={classes.divYourStake}>
-        <AmountSpan title={messages['Your Stake']} number={stake} messages={messages} isShowLoopring isXl isLoading={isLoading} loopringPrice={isShowDollar ? loopringPrice : 0} />
+        <AmountSpan title={messages['Your Stake']} number={stake} messages={messages} isShowTcash isXl isLoading={isLoading} tcashPrice={isShowDollar ? tcashPrice : 0} />
       </div>
 
       <div className="divider my-4" />
       <Grid container spacing={4}>
         <Grid item xs={12} sm={6}>
-          <AmountSpan title={messages['Your Pending Reward']} number={pendingReward} isShowLoopring isLoading={isLoading} loopringPrice={isShowDollar ? loopringPrice : 0} />
+          <AmountSpan title={messages['Your Pending Reward']} number={pendingReward} isShowTcash isLoading={isLoading} tcashPrice={isShowDollar ? tcashPrice : 0} />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <AmountSpan title={messages['Your Token Age']} number={tokenAge} isDay format="(0.0a)" isLoading={isChartLoading} loopringPrice={0} />
+          <AmountSpan title={messages['Your Token Age']} number={tokenAge} isDay format="(0.0a)" isLoading={isChartLoading} tcashPrice={0} />
         </Grid>
       </Grid>
       <div className="divider my-4" />
       <Grid container spacing={4}>
         <Grid item xs={12} sm={4}>
-          <AmountSpan title={messages['Total Stake']} number={stakeTotal} isShowLoopring isLoading={isLoading} loopringPrice={isShowDollar ? loopringPrice : 0} />
+          <AmountSpan title={messages['Total Stake']} number={stakeTotal} isShowTcash isLoading={isLoading} tcashPrice={isShowDollar ? tcashPrice : 0} />
         </Grid>
         <Grid item xs={12} sm={4}>
-          <AmountSpan title={messages['Total Reward']} number={feesTotal} isShowLoopring isLoading={isLoading} loopringPrice={isShowDollar ? loopringPrice : 0} />
+          <AmountSpan title={messages['Total Reward']} number={feesTotal} isShowTcash isLoading={isLoading} tcashPrice={isShowDollar ? tcashPrice : 0} />
         </Grid>
         <Grid item xs={12} sm={4}>
-          <AmountSpan title={messages['Your Share']} number={share} isPercent isLoading={isChartLoading} format="(0.000a)" loopringPrice={0} />
+          <AmountSpan title={messages['Your Share']} number={share} isPercent isLoading={isChartLoading} format="(0.000a)" tcashPrice={0} />
         </Grid>
       </Grid>
       <div className="divider my-4" />

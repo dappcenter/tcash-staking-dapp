@@ -191,7 +191,7 @@ const DepositStepper = React.memo(({
           <StepLabel>{messages.Done}</StepLabel>
           <StepContent>
             <Typography color="primary" className="animated infinite heartBeat delay-1s">
-              {messages['Your Loopring token are now staked and you will start collecting fees on all trades !']}
+              {messages['Your Tcash token are now staked and you will start collecting fees on all trades !']}
             </Typography>
             <div className={classes.divConfetti}>
               <Confetti

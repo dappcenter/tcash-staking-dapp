@@ -12,7 +12,7 @@ export default (theme) => ({
     height: 16,
     marginRight: theme.spacing(0.5),
   },
-  loopringLogo: {
+  tcashLogo: {
     marginBottom: 'auto',
     marginRight: 4,
     marginTop: 'auto',

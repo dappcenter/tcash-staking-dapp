@@ -6,9 +6,9 @@ const propTypes = {
   isDay: PropTypes.bool,
   isLoading: PropTypes.bool,
   isPercent: PropTypes.bool,
-  isShowLoopring: PropTypes.bool,
+  isShowTcash: PropTypes.bool,
   isXl: PropTypes.bool,
-  loopringPrice: PropTypes.number.isRequired,
+  tcashPrice: PropTypes.number.isRequired,
   number: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
 };

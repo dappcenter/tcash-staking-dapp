@@ -37,7 +37,7 @@ const ContractManager = () => {
     <div>
     <Card className="card-box mb-4">
       <span className="ribbon-angle ribbon-angle--top-left ribbon-primary">
-        <small><a href="https://loopring.org" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Loopring</a></small>
+        <small><a href="https://tcash.org" target="_blank" rel="noopener noreferrer" style={{ color: 'white' }}>Tcash</a></small>
       </span>
       <Grid container spacing={4}>
         <Grid item xs={12} lg={5}>

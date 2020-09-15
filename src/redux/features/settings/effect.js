@@ -4,7 +4,7 @@ import axios from 'axios';
 
 import { SETTINGS_LOGOUT, SETTINGS_SET_WALLET_ADDRESS, SETTINGS_SHOW_DOLLAR } from './action';
 import { onError, onSuccess } from '../../../utils/createAsyncAction';
-import { GECKO_LOOPRING_PRICE } from '../../../constants/endpoint';
+import { GECKO_TCASH_PRICE } from '../../../constants/endpoint';
 
 // eslint-disable-next-line func-names
 const fetchENS = function* (action) {
@@ -31,10 +31,10 @@ const deactivate = function* (action) {
 };
 
 // eslint-disable-next-line func-names
-const fetchLoopringPrice = function* (action) {
+const fetchTcashPrice = function* (action) {
   try {
-    const { data } = yield axios.get(GECKO_LOOPRING_PRICE);
-    yield put({ data: data.loopring.usd, type: onSuccess(action.type) });
+    const { data } = yield axios.get(GECKO_TCASH_PRICE);
+    yield put({ data: data.tcash.usd, type: onSuccess(action.type) });
   } catch (error) {
     yield put({ data: error, type: onError(action.type) });
   }
@@ -45,6 +45,6 @@ export default function* () {
   yield all([
     takeLatest(SETTINGS_SET_WALLET_ADDRESS, fetchENS),
     takeLatest(SETTINGS_LOGOUT, deactivate),
-    takeLatest(SETTINGS_SHOW_DOLLAR, fetchLoopringPrice),
+    takeLatest(SETTINGS_SHOW_DOLLAR, fetchTcashPrice),
   ]);
 }

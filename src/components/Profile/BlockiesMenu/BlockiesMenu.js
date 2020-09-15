@@ -8,7 +8,7 @@ import { PropTypes } from 'prop-types';
 
 import ShortAddressCopyButton from '../../ShortAddressCopyButton';
 import extProps from './propTypes';
-import lrc from '../../../assets/images/loopring/loopring-small-black.png';
+import lrc from '../../../assets/images/tcash/tcash-small-black.png';
 
 /*
  *
@@ -94,7 +94,7 @@ const BlockiesMenu = React.memo(({
             <Divider className="w-100" />
             <ListItem button onClick={() => window.open('https://etherscan.io/address/lrctoken.eth', '_blank')}>
               <span className="font-size-sm font-weight-bold">
-                <span className={classes.iconLeft}><img src={lrc} alt="Loopring logo" width={14} /></span>
+                <span className={classes.iconLeft}><img src={lrc} alt="Tcash logo" width={14} /></span>
                 {messages['LRC token']}
               </span>
             </ListItem>
@@ -111,19 +111,19 @@ const BlockiesMenu = React.memo(({
               </span>
             </ListItem>
             <Divider className="w-100" />
-            <ListItem button onClick={() => window.open('https://loopring.org', '_blank')}>
+            <ListItem button onClick={() => window.open('https://tcash.org', '_blank')}>
               <span className="font-size-sm font-weight-bold">
                 <span className={classes.iconLeft}><FontAwesomeIcon icon={['fas', 'globe']} /></span>
-                Loopring
+                Tcash
               </span>
             </ListItem>
-            <ListItem button onClick={() => window.open('https://loopring.io', '_blank')}>
+            <ListItem button onClick={() => window.open('https://tcash.io', '_blank')}>
               <span className="font-size-sm font-weight-bold">
                 <span className={classes.iconLeft}><FontAwesomeIcon icon={['fas', 'exchange-alt']} /></span>
                 {messages.Exchange}
               </span>
             </ListItem>
-            <ListItem button onClick={() => window.open('https://duneanalytics.com/loopring', '_blank')}>
+            <ListItem button onClick={() => window.open('https://duneanalytics.com/tcash', '_blank')}>
               <span className="font-size-sm font-weight-bold">
                 <span className={classes.iconLeft}><FontAwesomeIcon icon={['fas', 'chart-pie']} /></span>
                 {messages.Analytics}
@@ -135,7 +135,7 @@ const BlockiesMenu = React.memo(({
                 Discord
               </span>
             </ListItem>
-            <ListItem button onClick={() => window.open('https://twitter.com/loopringorg', '_blank')}>
+            <ListItem button onClick={() => window.open('https://twitter.com/tcashorg', '_blank')}>
               <span className="font-size-sm font-weight-bold">
                 <span className={classes.iconLeft}><FontAwesomeIcon icon={['fab', 'twitter']} /></span>
                 Twitter

@@ -3,7 +3,7 @@ import { Button, IconButton, Grid } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import extProps from './propTypes';
-import loopringLogo from '../../assets/images/loopring/loopring-small-white.png';
+import tcashLogo from '../../assets/images/tcash/tcash-small-white.png';
 import metmaskLogo from '../../assets/images/wallet/metmask.svg';
 import ledgerLogo from '../../assets/images/wallet/ledger.png';
 import trezorLogo from '../../assets/images/wallet/trezor.png';
@@ -45,12 +45,12 @@ const Web3SignInGrid = React.memo(({
               <div className="text-white mt-3">
                 <h1 className="display-4 my-3 font-weight-bold">
                   <img
-                    src={loopringLogo}
-                    className={classes.loopringImg}
-                    alt="Loopring logo"
+                    src={tcashLogo}
+                    className={classes.tcashImg}
+                    alt="Tcash logo"
                   />
                   {' '}
-                  {messages['Loopring Staking & Claiming manager']}
+                  {messages['Tcash Staking & Claiming manager']}
                 </h1>
                 <p className="font-size-md mb-0 text-white-50">
                   {messages['Please connect a wallet with your LRC holdings to start or use the Read only button to check the state of your stake.']}

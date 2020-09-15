@@ -6,7 +6,7 @@ const propTypes = {
   isChartLoading: PropTypes.bool.isRequired,
   isLoading: PropTypes.bool.isRequired,
   isShowDollar: PropTypes.bool,
-  loopringPrice: PropTypes.number.isRequired,
+  tcashPrice: PropTypes.number.isRequired,
   messages: PropTypes.object.isRequired,
   onEditAddress: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,

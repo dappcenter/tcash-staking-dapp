@@ -1,8 +1,8 @@
 {
   "name": "lrc-staking-dapp",
   "version": "1.0.0",
-  "homepage": "https://staking.loopring.org",
-  "description": "Manage your stake of Loopring token (stakingpool.lrctoken.eth)",
+  "homepage": "https://staking.tcash.org",
+  "description": "Manage your stake of tcash token (staking.tcashorg.eth)",
   "scripts": {
     "start": "serve -s build",
     "start:dev": "react-scripts start",
