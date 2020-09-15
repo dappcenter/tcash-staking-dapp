@@ -21,7 +21,7 @@ const SuspenseLoading = React.memo(({ messages }) => (
         <Typography component="span" className="font-size-lg d-block text-dark">
           {messages['If you have any issues please contact']}
           {' '}
-          <a href="https://twitter.com/NolanVanmoortel" target="_blank" rel="noopener noreferrer">@NolanVanmoortel</a>
+          <a href="https://tcash.org" target="_blank" rel="noopener noreferrer">tcash foundation</a>
         </Typography>
       </Typography>
     </div>

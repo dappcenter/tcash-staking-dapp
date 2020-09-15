@@ -15,7 +15,7 @@ import Action from './ActionContainer';
  * Display profile containing all basic information about stake user
  * and action available with the staking pool
  * Check if wallet is active and if all contract are loaded
- * NolanVanmoortel
+ * tcash foundation
  */
 
 const ContractManager = () => {
@@ -56,7 +56,7 @@ const ContractManager = () => {
     </Card>
 <div
 className="text-center"
-> {messages['developpedBy']}<a href="https://twitter.com/NolanVanmoortel">NolanVanmoortel</a> </div>
+> {messages['developpedBy']}<a href="https://tcash.org">tcash foundation</a> </div>
     </div>
   );
 };
