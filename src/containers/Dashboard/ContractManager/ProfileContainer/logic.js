@@ -24,7 +24,7 @@ export const oneTimeComputeTokenAgeDistribution = (stakeList, tokenAgeList, onSe
     if (stake.balance === '0') continue;
     const today = Moment();
     const day = today.diff(Moment.unix(stake.claimedAt), 'day');
-    tokenAgeMap.set(day, (tokenAgeMap.get(day) || 0) + Math.round(stake.balance / (10 ** 18)));
+    tokenAgeMap.set(day, (tokenAgeMap.get(day) || 0) + Math.round(stake.balance / (10 ** 8)));
   }
 
   const updatedTokenAgeList = [];
@@ -55,10 +55,10 @@ export const computeYourShareAndYourTokenAge = (stakeList, yourStake, yourShare,
   let totalPoint = 0;
   const today = Moment();
   const updatedYourTokenAge = today.diff(Moment.unix(yourStake.value.claimedAt), 'hour') / 24;
-  const yourPoint = (yourStake.value.balance / (10 ** 18)) * updatedYourTokenAge;
+  const yourPoint = (yourStake.value.balance / (10 ** 8)) * updatedYourTokenAge;
   if (yourPoint > 0) {
     stakeList.value.forEach((_stake) => {
-      totalPoint += (_stake.balance / (10 ** 18)) * (today.diff(Moment.unix(_stake.claimedAt), 'hour') / 24);
+      totalPoint += (_stake.balance / (10 ** 8)) * (today.diff(Moment.unix(_stake.claimedAt), 'hour') / 24);
     });
   }
   const updatedYourShare = !yourPoint ? 0 : safeAmount(yourPoint)

@@ -92,10 +92,10 @@ const ProfileContainer = () => {
   return (
     <Profile
       messages={messages}
-      feesTotal={(feeStats.value.remainingReward || 0) / (10 ** 18)}
-      stakeTotal={totalStake.value.balance / (10 ** 18)}
-      stake={(yourStake.value.balance || 0) / (10 ** 18)}
-      pendingReward={(yourStake.value.pendingReward) / (10 ** 18)}
+      feesTotal={(feeStats.value.remainingReward || 0) / (10 ** 8)}
+      stakeTotal={totalStake.value.balance / (10 ** 8)}
+      stake={(yourStake.value.balance || 0) / (10 ** 8)}
+      pendingReward={(yourStake.value.pendingReward) / (10 ** 8)}
       share={yourShare * 1 || 0}
       tokenAge={yourTokenAge || 0}
       walletAddress={walletAddress.value}

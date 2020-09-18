@@ -34,7 +34,7 @@ const makeBatchRequest = (library, calls) => {
 // eslint-disable-next-line func-names
 const fetchEventStackedList = function* (action) {
   try {
-    const eventList = yield action.data.contract.getPastEvents('TCASHStaked', { fromBlock: 0, toBlock: 'latest' });
+    const eventList = yield action.data.contract.getPastEvents('TOKENStaked', { fromBlock: 0, toBlock: 'latest' });
     const addressSet = Array.from(new Set(eventList.map((e) => e.returnValues.user)));
     const stackedList = yield makeBatchRequest(action.data.library,
       addressSet.map((e) => action.data.contract.methods.stakings(e).call));

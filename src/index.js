@@ -11,7 +11,7 @@ import configureStore from './redux/config';
 import 'sanitize.css/sanitize.css';
 import 'animate.css/animate.min.css';
 
-if (process.env.NODE_ENV === 'develop') log.enableAll();
+if (process.env.NODE_ENV === 'development') log.enableAll();
 
 log.info('Start the webapp...');
 

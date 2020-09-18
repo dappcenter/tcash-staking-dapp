@@ -5,7 +5,7 @@ import { fetchContract } from '../../../utils/simpleContractFetching';
 
 // eslint-disable-next-line func-names
 const fetchFeeStats = function* (action) {
-  yield fetchContract(action, 'getProtocolFeeStats', [], [{ from: 0x0 }]);
+  yield fetchContract(action, 'getRemainingReward', [], [{ from: 0x0 }]);
 };
 
 export default function* () {

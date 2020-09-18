@@ -8,6 +8,7 @@ export const fetchContract = function* (action, method, methodParams, callParams
     const res = yield action.data.contract.methods[method](...methodParams).call(...callParams);
     yield put({ data: res, type: onSuccess(action.type) });
   } catch (error) {
+    console.log(error);
     yield put({ data: error, type: onError(action.type) });
   }
 };
@@ -24,6 +25,7 @@ export const sendContract = function* (action, method, methodParams, callParams)
     });
     yield put({ data: receiptResult, type: onSuccess(action.type) });
   } catch (error) {
+    console.log(error);
     yield put({ data: error, type: onError(action.type) });
   }
 };
